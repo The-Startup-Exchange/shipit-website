@@ -19,7 +19,6 @@ const ImageList = () => {
   const totalImagesWidth = (imageWidth + spacing) * images.length;
   useEffect(() => {
     const totalImages = images.length;
-    const duplicatedImages = [...images, ...images]; // Duplicate the array once
     const totalPathLength = (imageWidth + spacing) * totalImages;
 
     controls.start({
@@ -50,6 +49,7 @@ const ImageList = () => {
               marginRight: `${spacing}px`,
               width: `${imageWidth}px`,
               flexShrink: 0,
+              marginTop: "-48px",
             }}
             className="border-dashed border-2 border-slate-500"
           >
@@ -59,11 +59,14 @@ const ImageList = () => {
               width={imageWidth}
               height={imageWidth}
               layout="fixed"
+              priority
             />
-            <p className="text-xs">
-              Designed Guide on how to transform apps using AI/ML powered
-              frameworks.
-            </p>
+            <div className="p-4">
+              <p className="text-xs">
+                Designed Guide on how to transform apps using AI/ML powered
+                frameworks.
+              </p>
+            </div>
           </div>
         ))}
       </motion.div>
