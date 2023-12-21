@@ -1,13 +1,11 @@
-"use client";
-
-import Image from "next/image";
 import { drukWide, plus_jakarta_sans } from "./fonts";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ModeToggle";
-import { motion } from "framer-motion";
 import ImageList from "@/components/imageList";
 
-export default function Home() {
+export default async function Home() {
+  const demos = await getProjects();
+
   return (
     <>
       <div className="absolute p-4 right-0">
@@ -25,7 +23,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <ImageList />
+          <ImageList demos={demos} />
         </div>
         <h2
           className={`${plus_jakarta_sans.className} text-2xl md:text-4xl text-left `}
@@ -39,4 +37,24 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+async function getProjects() {
+  const res = await fetch(
+    "https://api.airtable.com/v0/applTePF0yE2evQhL/Table%201",
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+      },
+    }
+  );
+  const data = await res.json();
+  const recs = data["records"].map((record: any) => {
+    const oneLiner = record.fields["One-liner"];
+    const name = record.fields["Name"];
+    const image = record.fields["Media"][0]["url"];
+    return { oneLiner, name, image };
+  });
+
+  return recs;
 }
