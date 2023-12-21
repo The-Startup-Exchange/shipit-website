@@ -11,8 +11,12 @@ export default function Home() {
       </div>
       <main className="min-h-screen w-screen px-16">
         <div className="flex flex-col items-center">
-          <div className="w-full flex justify-center">
-            <svg viewBox="0 0 68 18" className="fill-primary">
+          <div className="w-full flex justify-center z-20">
+            <svg
+              viewBox="0 0 68 18"
+              className="fill-primary"
+              style={{ marginTop: "-16px" }}
+            >
               <text x="0" y="15" className={`${drukWide.className} `}>
                 ship it
               </text>
@@ -24,7 +28,7 @@ export default function Home() {
             ship it
           </h1> */}
           </div>
-          <div className="flex">
+          <div className="flex pb-8 mt-[-32px]">
             <div className="m-4 border-dashed border-2 border-slate-500">
               <div>
                 <Image
