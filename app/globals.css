@@ -76,3 +76,12 @@
   }
 }
 
+.ship-it {
+  font-size: 20vw; /* Starting point for the scaling */
+  font-size: max(5rem, min(20vw, 20rem)); /* Ensures font-size is between 5rem and 15rem */
+  line-height: 1.1; /* Adjust as needed for your design */
+  white-space: nowrap;
+  overflow: hidden; /* Ensures that text doesn't overflow */
+  text-transform: lowercase; /* Optional: if you want the text to be uppercase */
+}
+

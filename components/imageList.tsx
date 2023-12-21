@@ -25,7 +25,7 @@ const ImageList = () => {
       x: -totalPathLength,
       transition: {
         repeat: Infinity,
-        duration: totalImages, // Adjusted duration for one extra set
+        duration: 2 * totalImages, // Adjusted duration for one extra set
         ease: "linear",
         onRepeat: () => {
           // Instantly reset to start when the first set finishes scrolling

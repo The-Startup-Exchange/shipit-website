@@ -16,15 +16,37 @@ export default function Home() {
       <main className="min-h-screen w-screen px-16">
         <div className="flex flex-col items-center">
           <div className="w-full flex justify-center z-20">
-            <svg
-              viewBox="0 0 68 18"
+            <div
+              className="w-full text-center"
+              style={{ fontSize: "5vw", whiteSpace: "nowrap" }}
+            >
+              <span className={`${drukWide.className} fill-primary ship-it`}>
+                ship it
+              </span>
+            </div>
+            {/* <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 16"
+              preserveAspectRatio="none"
               className="fill-primary"
               style={{ marginTop: "-16px" }}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <text x="0" y="15" className={`${drukWide.className} `}>
+              <style>
+                {`.stretchText { font-size: 48px; white-space: pre; }`}
+              </style>
+              <text
+                x="50%"
+                y="50%"
+                className={`${drukWide.className} stretchText`}
+                dominant-baseline="middle"
+                text-anchor="middle"
+              >
                 ship it
               </text>
-            </svg>
+            </svg> */}
+
             {/* <h1
             className={`${drukWide.className} xl:text-10xl lg:text-9xl md:text-8xl sm:text-7xl text-6xl`}
             style={{ textAlign: "justify", fontStretch: "200%" }}
