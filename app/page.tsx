@@ -13,7 +13,7 @@ export default function Home() {
       <div className="absolute p-4 right-0">
         <ModeToggle />
       </div>
-      <main className="min-h-screen w-screen px-16">
+      <main className="min-h-screen w-screen md:px-16 px-4">
         <div className="flex flex-col items-center">
           <div className="w-full flex justify-center z-20">
             <div
