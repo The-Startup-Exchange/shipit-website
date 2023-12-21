@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { drukWide, plus_jakarta_sans } from "./fonts";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ModeToggle";
+import { motion } from "framer-motion";
+import ImageList from "@/components/imageList";
 
 export default function Home() {
   return (
@@ -28,8 +32,9 @@ export default function Home() {
             ship it
           </h1> */}
           </div>
-          <div className="flex pb-8 mt-[-32px]">
-            <div className="m-4 border-dashed border-2 border-slate-500">
+          <ImageList />
+          {/* <div className="flex pb-8 mt-[-32px]">
+            <div className="m-4 border-dashed border-2 border-slate-500 min-w-[267]">
               <div>
                 <Image
                   src="/ship.png"
@@ -49,7 +54,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="m-4 border-dashed border-2 border-slate-500">
+            <div className="m-4 border-dashed border-2 border-slate-500 min-w-[267]">
               <div>
                 <Image
                   src="/ship.png"
@@ -69,7 +74,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="m-4 border-dashed border-2 border-slate-500">
+            <div className="m-4 border-dashed border-2 border-slate-500 min-w-[267]">
               <div>
                 <Image
                   src="/ship.png"
@@ -89,7 +94,27 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+            <div className="m-4 border-dashed border-2 border-slate-500 min-w-[267]">
+              <div>
+                <Image
+                  src="/ship.png"
+                  alt="Ship it!"
+                  width={267}
+                  height={1}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div
+                className="p-8 border-dashed border-t-2 border-slate-500"
+                style={{ maxWidth: "267px" }}
+              >
+                <p className="text-xs">
+                  Designed Guide on how to transform apps using AI/ML powered
+                  frameworks.
+                </p>
+              </div>
+            </div>
+          </div> */}
         </div>
         <h2 className={`${plus_jakarta_sans.className} text-4xl text-left `}>
           A space to forget about school and ship your next idea.
