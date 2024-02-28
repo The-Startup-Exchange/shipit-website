@@ -1,8 +1,8 @@
 "use client";
 
-import { drukWide, plus_jakarta_sans } from "./fonts";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ModeToggle";
+import { messina_mono_sans } from "./fonts";
 import { useRef } from "react";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -33,24 +33,27 @@ export default function Header() {
               </div>
               <nav className="md:flex space-x-10">
                 <NextLink href="http://startup.exchange">
-                  <NextImage 
-                    src="/startupExchange.png"
-                    height="48" width="170"
-                    alt="Sellraze Logo"
-                  />
+                  <div className="sxgt">
+                    <NextImage 
+                      src="/SXGT.png"
+                      height="48" width="170"
+                      alt="SXGT Logo"
+                    />
+                  </div>
                 </NextLink>
 
               </nav>
               <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
-                <a className="whitespace-nowrap text-base font-medium text-white hover:text-gray-300 mr-6" href="#">
-                  JOIN DISCORD
-                </a>
-                <a
-                  className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
-                  href="#"
-                >
-                  BRING THIS TO YOUR CAMPUS
-                </a>
+                <NextLink href="https://groupme.com/join_group/74807389/3z3z3z3z">
+                  <Button
+                    variant="outline" 
+                  >
+                    <div className={`${messina_mono_sans.className}`}>
+                      JOIN GROUPME
+                    </div>
+                  </Button>
+                </NextLink>
+
               </div>
             </div>
           </div>
