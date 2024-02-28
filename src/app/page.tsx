@@ -32,9 +32,23 @@ export default async function Home() {
                 >
                   a space to forget about school and ship your next idea.
                 </h2>
-                <div className="mx-auto space-x-2">
-                  <Button variant="outline">Join Discord</Button>
-                  <Button>Bring this to your campus</Button>
+                <div className={`${messina_mono_sans.className} mx-auto space-x-2`}>
+                  <NextLink href="https://groupme.com/join_group/74807389/3z3z3z3z">
+                    <Button
+                      variant="outline" 
+                    >
+                      <div className={`${messina_mono_sans.className}`}>
+                        JOIN GROUPME
+                      </div>
+                    </Button>
+                  </NextLink>
+                  <NextLink href="https://tinyurl.com/startupexchangegt">
+                  <Button>
+                    <div className={`${messina_mono_sans.className}`}>
+                      ATTEND
+                    </div>
+                  </Button>
+                </NextLink>
                 </div>
               </div>
             </div>
