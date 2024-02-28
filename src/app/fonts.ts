@@ -11,3 +11,7 @@ export const drukWide = localFont({
     subsets: ['latin'],
     display: 'swap',
   })
+  export const messina_mono_sans = localFont({
+    src: "./MessinaSansMono.ttf",
+    display: "swap",
+  });
