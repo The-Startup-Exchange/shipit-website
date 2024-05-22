@@ -1,17 +1,88 @@
 import localFont from 'next/font/local'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans, Crimson_Text } from 'next/font/google'
 
-
-export const drukWide = localFont({
-    src: "./Druk-Wide-Bold.ttf",
-    display: "swap",
-  });
-
-  export const plus_jakarta_sans = Plus_Jakarta_Sans({
+export const crimson_regular = Crimson_Text({
+    weight: '400',  // Thin
     subsets: ['latin'],
     display: 'swap',
-  })
-  export const messina_mono_sans = localFont({
-    src: "./MessinaSansMono.ttf",
+});
+
+export const crimson_regular_italic = Crimson_Text({
+    weight: '400',  // Thin
+    style: 'italic',
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const crimson_semibold = Crimson_Text({
+    weight: '600',  // Thin
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const crimson_bold = Crimson_Text({
+    weight: '700',  // Thin
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_thin = Plus_Jakarta_Sans({
+    weight: '200',  // Thin
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_regular = Plus_Jakarta_Sans({
+    weight: '400',  // Regular
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_medium = Plus_Jakarta_Sans({
+    weight: '500',  // Medium
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_semibold = Plus_Jakarta_Sans({
+    weight: '600',  // Semibold
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_bold = Plus_Jakarta_Sans({
+    weight: '700',  // Bold
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const plus_jakarta_sans_extrabold = Plus_Jakarta_Sans({
+    weight: '800',  // Extra Bold
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+export const druk_wide = localFont({
+    src: "./Druk-Wide-Bold.ttf",
     display: "swap",
-  });
+});
+
+export const messina_light = localFont({
+    src: "./MessinaSansMono-Light.ttf",
+    display: "swap",
+});
+
+export const messina_book = localFont({
+  src: "./MessinaSansMono-Book.ttf",
+  display: "swap",
+});
+
+export const messina_semibold = localFont({
+  src: "./MessinaSansMono-SemiBold.ttf",
+  display: "swap",
+});
+
+export const messina_bold = localFont({
+    src: "./MessinaSansMono-Bold.ttf",
+    display: "swap",
+});
