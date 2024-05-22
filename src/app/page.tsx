@@ -17,10 +17,17 @@ import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 export const dynamic = "force-dynamic";
 
+interface Project {
+  id: string;
+  oneLiner: string;
+  name: string;
+  base64url: string;
+}
+
 export default function Home() {
   const [hover, setHover] = useState(false);
   const [imgIndex, setImgIndex] = useState(0);
-  const [demos, setDemos] = useState([]);
+  const [demos, setDemos] = useState<Project[]>([]);
   const images = ["/shipIt2.png", "/shipIt1.png", "/shipIt3.png"];
   const nextImage = () => {
     setImgIndex((current) => (current + 1) % images.length);
