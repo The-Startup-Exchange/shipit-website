@@ -32,10 +32,24 @@ export const plus_jakarta_sans_thin = Plus_Jakarta_Sans({
     display: 'swap',
 });
 
+export const plus_jakarta_sans_thin_italic = Plus_Jakarta_Sans({
+  weight: '200',  // Thin
+  style: 'italic',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export const plus_jakarta_sans_regular = Plus_Jakarta_Sans({
     weight: '400',  // Regular
     subsets: ['latin'],
     display: 'swap',
+});
+
+export const plus_jakarta_sans_regular_italic = Plus_Jakarta_Sans({
+  weight: '400',  // Regular
+  style: 'italic',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const plus_jakarta_sans_medium = Plus_Jakarta_Sans({
