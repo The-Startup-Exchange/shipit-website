@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   plus_jakarta_sans_bold,
   plus_jakarta_sans_extrabold, 
@@ -20,12 +20,20 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   const [hover, setHover] = useState(false);
   const [imgIndex, setImgIndex] = useState(0);
+  const [demos, setDemos] = useState([]);
   const images = ["/shipIt2.png", "/shipIt1.png", "/shipIt3.png"];
   const nextImage = () => {
     setImgIndex((current) => (current + 1) % images.length);
   };
 
-  const demos = await getProjects();
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const projects = await getProjects();
+      setDemos(projects);
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <>
