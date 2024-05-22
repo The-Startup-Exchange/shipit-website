@@ -34,7 +34,7 @@ export default function Home() {
   const [demos, setDemos] = useState<Project[]>([]);
   const images = ["/shipIt2.png", "/shipIt1.png", "/shipIt3.png", "/shipIt4.png"];
   const shipIt = ["/nyc.jpg", "/gsu.jpeg", "/umich.gif", "/uiuc.jpeg"];
-  const places = ["Columbia University", "CalTech", "New York University", "Georgia Tech", "Georgia State", "University of Michigan", "University of Illinois Urbana-Champaign", "Duke University", "Parsons School of Design", "Fashion Institute of Technology", "Virginia Tech", "Michigan State University", "Babson College"];
+  const places = ["Columbia University", "CalTech", "New York University", "Georgia Tech", "Georgia State", "University of Michigan", "University of Illinois Urbana-Champaign", "Duke University", "Parsons School of Design", "Fashion Institute of Technology", "Barnard College", "Virginia Tech", "Michigan State University", "Babson College"];
   const nextImage = () => {
     setImgIndex((current) => (current + 1) % images.length);
   };
@@ -176,7 +176,7 @@ export default function Home() {
             </div>
           </div>
               <div className="w-full flex flex-row align-center items-center md:space-x-8 space-x-2 pt-12">
-                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-14 pt-10 justify-start">
+                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
                       <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
                   </div>
                   <Link href="https://groupme.com/join_group/74807389/3z3z3z3z" className="relative flex w-full justify-start">
@@ -205,7 +205,7 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-14 pt-10 justify-start">
+                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
                         <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
                   </div>
                 </div>
