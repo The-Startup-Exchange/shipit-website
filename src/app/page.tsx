@@ -218,6 +218,9 @@ export default function Home() {
         </div>
 
       </main>
+      <div className="flex w-full item-start bg-white">
+        <Image src="/constructionBar.png" alt="ship it" layout="responsive" width={100} height={100} />
+      </div>
     </>
   );
 }
