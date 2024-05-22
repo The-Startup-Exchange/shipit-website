@@ -77,7 +77,7 @@ export default function Home() {
             <h1 className={`text-[72px] leading-[100%] ${plus_jakarta_sans_extrabold.className}`}>are worth pursuing.</h1>
           </div>
           <div className="px-48">
-            <p className={`${plus_jakarta_sans_thin.className} text-[21px]`}>​the most talented creatives and builders often don't get enough time and support to work on their own ideas. we exist to create a space where they can do so, every week.</p>
+            <p className={`${plus_jakarta_sans_thin.className} text-[21px]`}>​the most talented creatives and builders often don&apos;t get enough time and support to work on their own ideas. we exist to create a space where they can do so, every week.</p>
           </div>
         </div>
         <div className="relative flex flex-col w-full">
