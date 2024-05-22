@@ -14,8 +14,8 @@ import ImageList from "@/components/imageList";
 import Image from "next/image";
 import Header from "./header";
 import Link from "next/link";
-import { createClient } from '@supabase/supabase-js'
-export const dynamic = 'force-dynamic'
+import { createClient } from "@supabase/supabase-js";
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
@@ -25,7 +25,7 @@ export default function Home() {
     setImgIndex((current) => (current + 1) % images.length);
   };
 
-  // const demos = await getProjects();
+  const demos = await getProjects();
 
   return (
     <>
@@ -126,59 +126,45 @@ export default function Home() {
                   </div>
                 </div>
             </div>
-        {/* <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <div className="w-full flex justify-center z-20">
 
           </div>
           <ImageList demos={demos} />
-        </div> */}
+        </div>
 
       </main>
     </>
   );
 }
 
+async function getProjects() {
+  // const supabase = createClient('https://wrlispjjwzomjvomdrbm.supabase.co', "")
 
-// async function getProjects() {
-//   const supabase = createClient('https://wrlispjjwzomjvomdrbm.supabase.co', "")
+  const res = await fetch(
+    "https://api.airtable.com/v0/applTePF0yE2evQhL/Projects%20(for%20website)",
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+      },
+    }
+  );
 
-//   const res = await fetch(
-//     "https://api.airtable.com/v0/applTePF0yE2evQhL/Projects%20(for%20website)",
-//     {
-//       headers: {
-//         Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-//       },
-//     }
-//   );
-//   const data = await res.json();
-//   console.log(data)
-//   const recs = data["records"].map(async (record: any) => {
-//     const id = record['id']
-//     const oneLiner = record.fields["One-liner"];
-//     const name = record.fields["Name"];
-//     const image = record.fields["Media"][0]["url"];
-//     const imageData = await fetch(image).then(res => res.blob())
-//     const base64data = URL.createObjectURL(imageData)
-    
-//     let { data, error } = await supabase
-//   .storage
-//     .getBucket('airtableImagesBucket')
-//     if(data == null) {
-//       let { data, error } = await supabase
-//         .storage
-//         .createBucket('airtableImagesBucket', {
-//           public: false,
-//         })
-//         console.log(data)
-//         console.log(error)
-//     }
-//     console.log(data)
-//     // console.log(error)
-    
-//     // if()
-//     return { id, oneLiner, name, image };
-//   });
+  const data = await res.json();
+  const recs = Promise.all(
+    data["records"].map(async (record: any) => {
+      const id = record["id"];
+      const oneLiner = record.fields["One-liner"];
+      const name = record.fields["Name"];
+      const image = record.fields["Media"][0]["url"];
+      const response = await fetch(image);
+      let blob = await response.blob();
+      let buffer = Buffer.from(await blob.arrayBuffer());
+      const base64url =
+        "data:" + blob.type + ";base64," + buffer.toString("base64");
+      return { id, oneLiner, name, base64url };
+    })
+  );
 
-
-//   return recs;
-// }
+  return recs;
+}

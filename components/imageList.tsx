@@ -35,40 +35,43 @@ const ImageList = ({ demos }: any) => {
     >
       <motion.div style={{ display: "flex" }} animate={controls}>
         {/* Duplicate the images for a seamless loop */}
-        {[...demos, ...demos].map((demo, index) => (
-          <div
-            key={index}
-            style={{
-              marginRight: `${spacing}px`,
-              width: `${imageWidth + 4}px`,
-              flexShrink: 0,
-              marginTop: "-48px",
-            }}
-            className="border-dashed border-2 border-slate-500"
-          >
+        {[...demos, ...demos].map((demo, index) => {
+          console.log(demo);
+          return (
             <div
+              key={index}
               style={{
-                position: "relative",
-                width: `${imageWidth}px`,
-                height: `${imageHeight}px`,
-                overflow: "hidden",
+                marginRight: `${spacing}px`,
+                width: `${imageWidth + 4}px`,
+                flexShrink: 0,
+                marginTop: "-48px",
               }}
+              className="border-dashed border-2 border-slate-500"
             >
-              <Image
-                src={demo.image}
-                alt="Logo"
-                fill
-                style={{ objectFit: "cover" }}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsrmyuBwAFBgIAtrCyWgAAAABJRU5ErkJggg=="
-                priority
-              />
+              <div
+                style={{
+                  position: "relative",
+                  width: `${imageWidth}px`,
+                  height: `${imageHeight}px`,
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={demo.base64url}
+                  alt="Logo"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsrmyuBwAFBgIAtrCyWgAAAABJRU5ErkJggg=="
+                  priority
+                />
+              </div>
+              <div className="p-4 flex justify-center h-full w-full">
+                <p className="text-xs text-center">{demo.oneLiner}</p>
+              </div>
             </div>
-            <div className="p-4 flex justify-center h-full w-full">
-              <p className="text-xs text-center">{demo.oneLiner}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </motion.div>
     </div>
   );
