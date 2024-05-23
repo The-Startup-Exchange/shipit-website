@@ -52,7 +52,7 @@ export default function Header() {
               <div className="flex w-full item-start">
                     <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
               </div>
-              <div className="flex flex-row md:pt-6 pt-3 items-center md:px-8 px-2 w-full justify-between">
+              <div className="flex md:flex-row flex-col md:pt-6 pt-3 items-center md:px-8 px-2 w-full justify-between">
                 <Link href="http://startup.exchange">
                   <div className="sxgt">
                     <p className={`text-[18px] ${plus_jakarta_sans_extrabold.className} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>ship-it🚢</p>

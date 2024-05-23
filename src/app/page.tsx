@@ -35,11 +35,11 @@ export default function Home() {
   const images = ["/shipIt2.png", "/shipIt1.png", "/shipIt3.png", "/shipIt4.png"];
   const shipIt = ["/nyc.jpg", "/gsu.jpeg", "/umich.gif", "/uiuc.jpeg"];
   const places = ["Columbia University", "CalTech", "New York University", "Georgia Tech", "Georgia State", "University of Michigan", "University of Illinois Urbana-Champaign", "Duke University", "Parsons School of Design", "Fashion Institute of Technology", "Barnard College", "Virginia Tech", "Michigan State University", "Babson College"];
-  const nextImage = () => {
-    setImgIndex((current) => (current + 1) % images.length);
-  };
 
   useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setImgIndex(randomIndex);
+
     const fetchProjects = async () => {
       const projects = await getProjects();
       setDemos(projects);
@@ -53,15 +53,15 @@ export default function Home() {
       <Header />
       <main className="w-full py-12 md:py-16 bg-[#FFFEF9] text-black">
         <div className="flex flex-col w-full space-y-4">
-          <Link href="#" onClick={nextImage} className="flex w-full justify-start">
+          <div className="flex w-full md:px-12 px-2 justify-start">
             <Image src={images[imgIndex]} alt="ship it" layout="responsive" width={100} height={100} />
-          </Link>
+          </div>
           <div className="flex flex-col w-full items-center pt-4">
             <Link href="https://www.instagram.com/myfroggystuff/">
               <p className={`${plus_jakarta_sans_regular_italic.className} text-[#d1d1d1] text-[16px]`}>artwork by Bella (@myfroggystuff)</p>
             </Link>
           </div>
-          <div className={`${crimson_regular.className} space-y-40`}>
+          <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
             <div className="flex flex-col align-center px-8 py-12 items-center">
               <p className={`${crimson_regular.className} md:pt-0 pt-20 md:pb-4 pb-6 md:text-start text-center leading-[120%] text-[42px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
               <div className="md:space-x-6 space-y-6 md:space-y-0">
@@ -73,7 +73,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="md:px-80 px-0 text-center space-y-4 text-[18px]">
+            <div className="md:px-80 px-7 text-center space-y-4 text-[18px]">
               <Image
                   src="/boxes.png"
                   alt="Boxes"
@@ -82,16 +82,16 @@ export default function Home() {
                   className="absolute left-20 top-300 mt-20 rotate-12 pt-48 md:w-[10%] w-[0%]"
                 />
               <div className={`flex flex-col space-y-2 z-10`}>
-                <h1 className={`text-[68px] leading-[100%] ${plus_jakarta_sans_bold.className}`}>ideas that excite you</h1>
-                <h1 className={`text-[72px] leading-[100%] ${plus_jakarta_sans_extrabold.className}`}>are worth pursuing.</h1>
+                <h1 className={`md:text-[68px] text-[52px] leading-[100%] ${plus_jakarta_sans_bold.className}`}>ideas that excite you</h1>
+                <h1 className={`md:text-[72px] text-[56px] leading-[100%] ${plus_jakarta_sans_extrabold.className}`}>are worth pursuing.</h1>
               </div>
-              <div className="md:px-20 px-12 py-10 space-y-8">
+              <div className="md:px-20 px-4 py-10 space-y-8">
                 <p className={`${plus_jakarta_sans_thin.className} text-start`}>&quot;ship-it&quot; is a weekly co-working session that brings together student makers, builders, and creators to work on their ideas.</p>
                 <p className={`${plus_jakarta_sans_regular_italic.className} text-start`}>​​to &quot;ship&quot; is to deliver progress, ​to deliver new features, or to get your work in front of people.</p>
                 <p className={`${plus_jakarta_sans_thin.className} text-start`}>​the most talented creatives and builders often don&apos;t get enough time and support to work on their own ideas. we exist to create a space where they can do so, every week.</p>
               </div>
             </div>
-            <div className="w-full md:px-28 px-12 py-28 md:text-center items-center align-center justify-center space-y-12">
+            <div className="w-full md:px-28 px-7 py-28 md:text-center items-center align-center justify-center space-y-12">
               <Image
                   src="/hammer.png"
                   alt="Hammer"
@@ -100,20 +100,20 @@ export default function Home() {
                   className="absolute right-20 top-200 pt-0 md:w-[10%] w-[0%]"
                 />
               <div className={`flex flex-col space-y-2 z-10`}>
-                <h1 className={`text-[68px] leading-[100%] ${plus_jakarta_sans_bold.className}`}>what does this look like?</h1>
+                <h1 className={`md:text-[68px] text-[56px] leading-[100%] text-center ${plus_jakarta_sans_bold.className}`}>what does this look like?</h1>
               </div>
-              <div className="md:px-72 px-0 text-start space-y-8">
+              <div className="md:px-72 px-4 text-start space-y-8">
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>each session is 2-3 hours, with 50-60 min. focused work sessions.</p>
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>​​​​​​the project you work on can be anything! <span className={`${plus_jakarta_sans_thin_italic.className}`}>​​​​ex. coding an app, recording podcasts, CADing, making beats, painting custom shoes, etc.</span></p>
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>​the only rule is that you can&apos;t do hw...</p>
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>​​​​​​at the end, we&apos;ll have 2 minute demos for people to talk about what they worked on — completely optional, so no pressure!</p>
               </div>
             </div>
-            <div className="w-full md:px-28 px-12 py-28 md:text-center items-center align-center justify-center space-y-12">
+            <div className="w-full md:px-28 px-7 py-28 md:text-center items-center align-center justify-center space-y-12">
               <div className={`flex flex-col space-y-2 z-10`}>
-                <h1 className={`text-[68px] leading-[100%] ${plus_jakarta_sans_bold.className}`}>do i need experience?</h1>
+                <h1 className={`md:text-[68px] text-center text-[56px] w-full leading-[100%] ${plus_jakarta_sans_bold.className}`}>do i need experience?</h1>
               </div>
-              <div className="md:px-72 px-0 text-start space-y-8">
+              <div className="md:px-72 px-4 text-start space-y-8">
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>nope! all levels of experience are welcome. your starting point does not matter.</p>
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>​​to become creative, you need to create. ship-it is the place to start, to be inspired, and regain your childlike imagination and drive for making things & sharing them with friends.</p>
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>we know you&apos;ve got ideas. and dreams. passions. dont let them die as school picks up.</p>
@@ -165,7 +165,7 @@ export default function Home() {
                   objectFit="cover"
               />
             </div>
-            <div className={`flex flex-col pl-12 py-28 mt-16 justify-center align-center items-center z-10 md:w-[50%] w-[100%]`}>
+            <div className={`flex flex-col md:pl-12 md:px-0 px-2 py-28 mt-16 justify-center align-center items-center z-10 md:w-[50%] w-[100%]`}>
               <Image
                     src="/buildYourIdeas.png"
                     alt="ship it"
@@ -210,13 +210,11 @@ export default function Home() {
                   </div>
                 </div>
             </div>
-        <div className="flex flex-col items-center">
+        {/* <div className="flex flex-col items-center">
           <div className="w-full flex justify-center z-20">
-
           </div>
           <ImageList demos={demos} />
-        </div>
-
+        </div> */}
       </main>
       <div className="flex w-full item-start bg-white">
         <Image src="/constructionBar.png" alt="ship it" layout="responsive" width={100} height={100} />
