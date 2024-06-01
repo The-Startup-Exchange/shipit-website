@@ -64,6 +64,13 @@ export const plus_jakarta_sans_semibold = Plus_Jakarta_Sans({
     display: 'swap',
 });
 
+export const plus_jakarta_sans_semibold_italic = Plus_Jakarta_Sans({
+    weight: '600',  // Semibold
+    style: 'italic',
+    subsets: ['latin'],
+    display: 'swap',
+});
+
 export const plus_jakarta_sans_bold = Plus_Jakarta_Sans({
     weight: '700',  // Bold
     subsets: ['latin'],

@@ -5,9 +5,11 @@ import {
   plus_jakarta_sans_bold,
   plus_jakarta_sans_extrabold, 
   plus_jakarta_sans_thin,
+  plus_jakarta_sans_semibold,
   crimson_regular, 
   plus_jakarta_sans_medium,
   plus_jakarta_sans_regular_italic,
+  plus_jakarta_sans_semibold_italic,
   plus_jakarta_sans_thin_italic,
   crimson_regular_italic
 } from "./fonts";
@@ -33,9 +35,110 @@ export default function Home() {
   const [imgIndex, setImgIndex] = useState(0);
   const [demos, setDemos] = useState<Project[]>([]);
   const images = ["/shipIt2.png", "/shipIt1.png", "/shipIt3.png", "/shipIt4.png"];
-  const shipIt = ["/nyc.jpg", "/gsu.jpeg", "/umich.gif", "/uiuc.jpeg"];
-  const places = ["Columbia University", "CalTech", "New York University", "Georgia Tech", "Georgia State", "University of Michigan", "University of Illinois Urbana-Champaign", "Duke University", "Parsons School of Design", "Fashion Institute of Technology", "Barnard College", "Virginia Tech", "Michigan State University", "Babson College"];
-
+  const shipIt = ["/nyc.jpg", "/gsu.jpeg", "/umich.gif", "/uiuc.jpeg", "/duke.jpeg"];
+  // const places = ["Columbia University", "CalTech", "New York University", "Georgia Tech", "Georgia State", "University of Michigan", "University of Illinois Urbana-Champaign", "Duke University", "Parsons School of Design", "Fashion Institute of Technology", "Barnard College", "Virginia Tech", "Michigan State University", "Babson College"];
+  const campuses = [
+    {
+        name: "Stanford University",
+        image: "/duke.jpeg",
+    },
+    {
+        name: "UC Berkeley",
+        image: "/duke.jpeg",
+    },
+    {
+        name: "Georgia Tech",
+        image: "/duke.jpeg",
+    },
+    {
+        name: "University of Michigan",
+        image: "/umich.gif",
+    },
+    {
+        name: "UIUC",
+        image: "/uiuc.jpeg",
+    },
+    {
+        name: "Harvard University",
+        image: "/duke.jpeg",
+    },
+    // {
+    //     name: "UT Austin",
+    //     image: "/duke.jpeg",
+    // },
+    {
+        name: "Duke University",
+        image: "/duke.jpeg",
+    },
+    {
+        name: "Cornell University",
+        image: "/duke.jpeg",
+    },
+    {
+        name: "Columbia University",
+        image: "/columbia.jpg",
+    },
+    {
+        name: "New York University",
+        image: "/nyc.jpg",
+    },
+    {
+        name: "Cal Tech",
+        image: "/nyc.jpg",
+    },
+    {
+        name: "Northeastern University",
+        image: "/northeastern.jpeg",
+    },
+    {
+        name: "Michigan State University",
+        image: "/msu.jpeg",
+    },
+    // {
+    //   name: "Barnard College",
+    //   image: "/nyc.jpg",
+    // },
+    // {
+    //     name: "Virginia Tech",
+    //     image: "/nyc.jpg",
+    // },
+    {
+        name: "Univ. of Central Florida",
+        image: "/nyc.jpg",
+    },
+    {
+        name: "Parsons School of Design",
+        image: "/nyc.jpg",
+    },
+    {
+        name: "FIT NYC",
+        image: "/nyc.jpg",
+    },
+    // {
+    //   name: "University of Pennsylvania",
+    //   image: "/nyc.jpg",
+    // },
+    {
+        name: "Georgia State",
+        image: "/gsu.jpeg",
+    },
+    // {
+    //   name: "University of California, San Diego",
+    //   image: "/nyc.jpg",
+    // },
+    {
+        name: "Babson College",
+        image: "/nyc.jpg",
+    },
+    // {
+    //     name: "Wellesley College",
+    //     image: "/nyc.jpg",
+    // },
+    // {
+    //     name: "Olin College of Engineering",
+    //     image: "/nyc.jpg",
+    // },
+];
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
     setImgIndex(randomIndex);
@@ -51,21 +154,29 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full py-12 md:py-16 bg-[#FFFEF9] text-black">
-        <div className="flex flex-col w-full space-y-4">
+      <main className="w-full py-12 md:py-16 bg-[#FFFEF9] text-black scroll-smooth">
+        <div className="flex flex-col w-full space-y-4 scroll-smooth">
           <div className="flex w-full md:px-12 px-2 justify-start">
             <Image src={images[imgIndex]} alt="ship it" layout="responsive" width={100} height={100} />
           </div>
           <div className="flex flex-col w-full items-center pt-4">
             <Link href="https://www.instagram.com/myfroggystuff/">
-              <p className={`${plus_jakarta_sans_regular_italic.className} text-[#d1d1d1] text-[16px]`}>artwork by Bella (@myfroggystuff)</p>
+              <p className={`text-[16px] text-[#d1d1d1] ${plus_jakarta_sans_regular_italic.className} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>artwork by Bella (@myfroggystuff)</p>
             </Link>
           </div>
           <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
             <div className="flex flex-col align-center px-8 py-12 items-center">
               <p className={`${crimson_regular.className} md:pt-0 pt-20 md:pb-4 pb-6 md:text-start text-center leading-[120%] text-[42px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
               <div className="md:space-x-6 space-y-6 md:space-y-0">
-                <Button variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5">
+              <Button onClick={() => {
+                  const section = document.getElementById('attendSection');
+                  if (section) {
+                    window.scrollTo({
+                      top: section.offsetTop,
+                      behavior: 'smooth'
+                    });
+                  }
+                }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5">
                   <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
                 </Button>
                 <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
@@ -96,9 +207,9 @@ export default function Home() {
                 <Image src='/thisSemester.png' alt="ship it" layout="responsive" width={100} height={100} />
               </div>
               <Marquee className="" speed={90} loop={0} direction="right">
-                {([...places, ...places]).map((place, i) => (
+                {([...campuses, ...campuses]).map((campus, i) => (
                   <div key={i} className="flex flex-row">
-                    <p className={`${crimson_regular.className} tracking-tighter`}>{' '}{place}</p><p className="px-2">•</p>
+                    <p className={`${crimson_regular.className} tracking-tighter`}>{' '}{campus.name}</p><p className="px-2">•</p>
                   </div>
                 ))}
               </Marquee>
@@ -118,9 +229,9 @@ export default function Home() {
                 ))}
               </Marquee>
               <Marquee className="" speed={90} loop={0} direction="left">
-                {([...places, ...places]).map((place, i) => (
+                {([...campuses, ...campuses]).map((campus, i) => (
                   <div key={i} className="flex flex-row">
-                    <p className={`${crimson_regular.className} tracking-tighter`}>{' '}{place}</p><p className="px-2">•</p>
+                    <p className={`${crimson_regular.className} tracking-tighter`}>{' '}{campus.name}</p><p className="px-2">•</p>
                   </div>
                 ))}
               </Marquee>
@@ -143,7 +254,7 @@ export default function Home() {
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>​​​​​​at the end, we&apos;ll have 2 minute demos for people to talk about what they worked on — completely optional, so no pressure!</p>
               </div>
             </div>
-            <div className="w-full md:px-28 px-7 py-28 md:text-center items-center align-center justify-center space-y-12">
+            <div className="w-full md:px-28 px-7 py-28 md:text-center items-center align-center justify-center space-y-12 -mb-12">
               <div className={`flex flex-col space-y-2 z-10`}>
                 <h1 className={`md:text-[68px] text-center text-[56px] w-full leading-[100%] ${plus_jakarta_sans_bold.className}`}>do i need experience?</h1>
               </div>
@@ -153,6 +264,57 @@ export default function Home() {
                 <p className={`${plus_jakarta_sans_thin.className} text-[18px]`}>we know you&apos;ve got ideas. and dreams. passions. dont let them die as school picks up.</p>
                 <p className={`${plus_jakarta_sans_bold.className} text-[18px]`}>welcome to ship-it!</p>
               </div>
+            </div>
+            <div className="w-full md:px-24 px-7 md:text-center items-center align-center justify-center space-y-12" id="attendSection">
+              <div className={`flex flex-col space-y-2 z-10`}>
+                <h1 className={`md:text-[68px] text-center text-[56px] w-full leading-[100%] ${plus_jakarta_sans_bold.className} pt-12`}>attend</h1>
+              </div>
+              <div className={`grid grid-cols-1 mt-[75px] border border-dashed border-[#e0e0e0]`}>
+                {campuses.map((campus, index) => (
+                  <Link href="/" target="_blank" rel="noopener noreferrer" key={index}>
+                  <div className="flex flex-col">
+                    <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
+                      <p className={`text-[24px] leading-[150%] px-6 py-6 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name.toLowerCase()}</p>
+                      <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
+                        <div className={`${plus_jakarta_sans_semibold.className} text-2xl font-bold flex items-center w-full h-full`}>
+                          →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                ))}
+                <Link href="/" target="_blank" rel="noopener noreferrer">
+                  <div className="flex flex-col">
+                    <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
+                      <p className={`text-[24px] leading-[150%] px-6 py-6 text-center w-full ${plus_jakarta_sans_semibold_italic.className}`}>my campus is not listed here...</p>
+                      {/* <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
+                      </div> */}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              {/* <div className={`grid grid-cols-1 md:grid-cols-4 gap-14 mt-[75px] border-[#e0e0e0]`}>
+                {campuses.map((campus, index) => (
+                  <div key={index} className="flex flex-col">
+                    <div className="relative border border-[#e0e0e0] border-dashed" style={{ height: '238px' }}>
+                      <Image src={campus.image} layout="fill" objectFit="cover" alt={campus.name} />
+                    </div>
+                    <div className="flex flex-row items-stretch align-start justify-between border border-dashed text-start space-x-4 border-[#e0e0e0]">
+                      <p className={`text-[15px] leading-[150%] px-4 py-5 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name}</p>
+                      <Link href="/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative flex items-center border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-4 h-full">
+                        <div className={`${plus_jakarta_sans_semibold.className} text-xl z-10 hover:text-black font-bold`}>
+                          →
+                        </div>
+                        <div className="absolute inset-0 transition-opacity duration-500 ease-in-out"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
+                      </div>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div> */}
             </div>
         </div>
 
@@ -213,7 +375,7 @@ export default function Home() {
         <div className="flex flex-col pt-16 items-center">
           <div className="w-full flex justify-center z-20">
           </div>
-          {/* <ImageList demos={demos} /> */}
+          {/* <sImageList demos={demos} /> */}
         </div>
       </main>
       <div className="flex w-full item-start bg-white">
