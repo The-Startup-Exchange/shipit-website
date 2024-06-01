@@ -167,8 +167,8 @@ export default function Home() {
           <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
             <div className="flex flex-col align-center px-8 py-12 items-center">
               <p className={`${crimson_regular.className} md:pt-0 pt-20 md:pb-4 pb-6 md:text-start text-center leading-[120%] text-[42px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
-              <div className="md:space-x-6 space-y-6 md:space-y-0">
-              <Button onClick={() => {
+              <div className="md:space-x-6 ">
+                <Button onClick={() => {
                   const section = document.getElementById('attendSection');
                   if (section) {
                     window.scrollTo({
@@ -176,7 +176,7 @@ export default function Home() {
                       behavior: 'smooth'
                     });
                   }
-                }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5">
+                }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 mb-4 md:mb-0">
                   <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
                 </Button>
                 <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
