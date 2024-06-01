@@ -156,17 +156,17 @@ export default function Home() {
       <Header />
       <main className="w-full py-12 md:py-16 bg-[#FFFEF9] text-black scroll-smooth">
         <div className="flex flex-col w-full space-y-4 scroll-smooth">
-          <div className=" w-full md:px-24 px-24 py-16 pb-56">
-            <div className=" w-1/2 py-8 space-y-1.5">
+          <div className=" w-full md:px-24 px-4 pb-56">
+            <div className=" w-full align-center items-center text-center py-16">
               <Image src={images[imgIndex]} alt="ship it" layout="responsive" width={50} height={50} />
               <Link href="https://www.instagram.com/myfroggystuff/">
-                <p className={`text-[16px] text-[#d1d1d1] ${plus_jakarta_sans_regular_italic.className} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>artwork by Bella (@myfroggystuff)</p>
+                <p className={`text-[16px] text-[#d1d1d1] ${plus_jakarta_sans_regular_italic.className} hover:bg-clip-text hover:text-transparent pt-3 hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>artwork by Bella (@myfroggystuff)</p>
               </Link>
             </div>
-              <p className={`${crimson_regular.className} md:pb-2 pb-6 leading-[120%] tracking-tighter text-[96px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
-              <div className="flex flex-col w-full align-start pt-8">
-                <div className="md:space-x-6 ">
-                  <Button onClick={() => {
+            <div className="flex md:flex-row flex-col w-full align-start pt-8 justify-between items-center md:space-x-36 space-x-0 align-center">
+              <p className={`${crimson_regular.className} md:text-start text-center md:pb-2 pb-6 md:leading-[120%] leading-[100%] tracking-tighter md:text-[72px] text-[58px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
+              <div className="md:space-x-6 flex md:flex-row flex-col">
+                <Button onClick={() => {
                     const section = document.getElementById('attendSection');
                     if (section) {
                       window.scrollTo({
@@ -176,13 +176,13 @@ export default function Home() {
                     }
                   }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 mb-4 md:mb-0">
                     <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
-                  </Button>
-                  <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
-                    <h1 className={`text-[24px] leading-[100%] tracking-tighter  ${plus_jakarta_sans_thin.className}`}>host</h1>
-                  </Button>
-                </div>
+                </Button>
+                <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
+                  <h1 className={`text-[24px] leading-[100%] tracking-tighter  ${plus_jakarta_sans_thin.className}`}>host</h1>
+                </Button>
               </div>
             </div>
+          </div>
           <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
             <div className="md:px-80 px-7 text-center space-y-4 text-[18px]">
               <Image
