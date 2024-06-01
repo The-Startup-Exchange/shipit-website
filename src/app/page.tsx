@@ -68,7 +68,7 @@ export default function Home() {
                 <Button variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5">
                   <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
                 </Button>
-                <Button variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
+                <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
                   <h1 className={`text-[24px] leading-[100%] tracking-tighter  ${plus_jakarta_sans_thin.className}`}>host</h1>
                 </Button>
               </div>
@@ -179,7 +179,7 @@ export default function Home() {
                   <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
                       <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
                   </div>
-                  <Link href="https://groupme.com/join_group/74807389/3z3z3z3z" className="relative flex w-full justify-start">
+                  <Link href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" className="relative flex w-full justify-start">
                     <div
                       onMouseEnter={() => setHover(true)}
                       onMouseLeave={() => setHover(false)}
@@ -187,7 +187,7 @@ export default function Home() {
                     >
                       <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-0' : 'opacity-100'}`}>
                         <Image
-                          src="/joinGroupMe.png"
+                          src="/bringToYourCampus.png"
                           alt="ship it"
                           layout="responsive"
                           width={100}
@@ -196,7 +196,7 @@ export default function Home() {
                       </div>
                       <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
-                          src="/joinGroupMeHover.png"
+                          src="/bringToYourCampusHover.png"
                           alt="ship it"
                           layout="responsive"
                           width={100}
