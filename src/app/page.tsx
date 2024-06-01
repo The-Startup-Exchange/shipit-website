@@ -156,34 +156,34 @@ export default function Home() {
       <Header />
       <main className="w-full py-12 md:py-16 bg-[#FFFEF9] text-black scroll-smooth">
         <div className="flex flex-col w-full space-y-4 scroll-smooth">
-          <div className="flex w-full md:px-12 px-2 justify-start">
-            <Image src={images[imgIndex]} alt="ship it" layout="responsive" width={100} height={100} />
-          </div>
-          <div className="flex flex-col w-full items-center pt-4">
-            <Link href="https://www.instagram.com/myfroggystuff/">
-              <p className={`text-[16px] text-[#d1d1d1] ${plus_jakarta_sans_regular_italic.className} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>artwork by Bella (@myfroggystuff)</p>
-            </Link>
-          </div>
-          <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
-            <div className="flex flex-col align-center px-8 py-12 items-center">
-              <p className={`${crimson_regular.className} md:pt-0 pt-20 md:pb-4 pb-6 md:text-start text-center leading-[120%] text-[42px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
-              <div className="md:space-x-6 ">
-                <Button onClick={() => {
-                  const section = document.getElementById('attendSection');
-                  if (section) {
-                    window.scrollTo({
-                      top: section.offsetTop,
-                      behavior: 'smooth'
-                    });
-                  }
-                }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 mb-4 md:mb-0">
-                  <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
-                </Button>
-                <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
-                  <h1 className={`text-[24px] leading-[100%] tracking-tighter  ${plus_jakarta_sans_thin.className}`}>host</h1>
-                </Button>
+          <div className=" w-full md:px-24 px-24 py-16 pb-56">
+            <div className=" w-1/2 py-8 space-y-1.5">
+              <Image src={images[imgIndex]} alt="ship it" layout="responsive" width={50} height={50} />
+              <Link href="https://www.instagram.com/myfroggystuff/">
+                <p className={`text-[16px] text-[#d1d1d1] ${plus_jakarta_sans_regular_italic.className} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FFCBA2] hover:to-[#D895B7] transition duration-500`}>artwork by Bella (@myfroggystuff)</p>
+              </Link>
+            </div>
+              <p className={`${crimson_regular.className} md:pb-2 pb-6 leading-[120%] tracking-tighter text-[96px]`}>a space to forget about class & hw and &quot;ship&quot; your next idea.</p>
+              <div className="flex flex-col w-full align-start pt-8">
+                <div className="md:space-x-6 ">
+                  <Button onClick={() => {
+                    const section = document.getElementById('attendSection');
+                    if (section) {
+                      window.scrollTo({
+                        top: section.offsetTop,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }} variant="secondary" className="flex-col items-center md:w-[150px] w-full md:px-0 px-20 py-10 mb-4 md:mb-0">
+                    <h1 className={` text-[24px] leading-[100%] tracking-tighter ${plus_jakarta_sans_thin.className}`}>attend</h1>
+                  </Button>
+                  <Button href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" variant="outline" className={`flex-col items-center hover:text-white md:w-[150px] w-full md:px-0 px-20 py-10 space-y-1.5`}>
+                    <h1 className={`text-[24px] leading-[100%] tracking-tighter  ${plus_jakarta_sans_thin.className}`}>host</h1>
+                  </Button>
+                </div>
               </div>
             </div>
+          <div className={`${crimson_regular.className} w-full md:space-y-40 space-y-20`}>
             <div className="md:px-80 px-7 text-center space-y-4 text-[18px]">
               <Image
                   src="/boxes.png"
@@ -265,60 +265,60 @@ export default function Home() {
                 <p className={`${plus_jakarta_sans_bold.className} text-[18px]`}>welcome to ship-it!</p>
               </div>
             </div>
-            <div className="w-full md:px-24 px-7 md:text-center items-center align-center justify-center space-y-12" id="attendSection">
-              <div className={`flex flex-col space-y-2 z-10`}>
-                <h1 className={`md:text-[68px] text-center text-[56px] w-full leading-[100%] ${plus_jakarta_sans_bold.className} pt-12`}>attend</h1>
-              </div>
-              <div className={`grid grid-cols-1 mt-[75px] border border-dashed border-[#e0e0e0]`}>
-                {campuses.map((campus, index) => (
-                  <Link href="/" target="_blank" rel="noopener noreferrer" key={index}>
-                  <div className="flex flex-col">
-                    <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
-                      <p className={`text-[24px] leading-[150%] px-6 py-6 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name.toLowerCase()}</p>
-                      <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
-                        <div className={`${plus_jakarta_sans_semibold.className} text-2xl font-bold flex items-center w-full h-full`}>
-                          →
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-                ))}
-                <Link href="/" target="_blank" rel="noopener noreferrer">
-                  <div className="flex flex-col">
-                    <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
-                      <p className={`text-[24px] leading-[150%] px-6 py-6 text-center w-full ${plus_jakarta_sans_semibold_italic.className}`}>my campus is not listed here...</p>
-                      {/* <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
-                      </div> */}
-                    </div>
-                  </div>
-                </Link>
-              </div>
-              {/* <div className={`grid grid-cols-1 md:grid-cols-4 gap-14 mt-[75px] border-[#e0e0e0]`}>
-                {campuses.map((campus, index) => (
-                  <div key={index} className="flex flex-col">
-                    <div className="relative border border-[#e0e0e0] border-dashed" style={{ height: '238px' }}>
-                      <Image src={campus.image} layout="fill" objectFit="cover" alt={campus.name} />
-                    </div>
-                    <div className="flex flex-row items-stretch align-start justify-between border border-dashed text-start space-x-4 border-[#e0e0e0]">
-                      <p className={`text-[15px] leading-[150%] px-4 py-5 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name}</p>
-                      <Link href="/" target="_blank" rel="noopener noreferrer">
-                      <div className="relative flex items-center border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-4 h-full">
-                        <div className={`${plus_jakarta_sans_semibold.className} text-xl z-10 hover:text-black font-bold`}>
-                          →
-                        </div>
-                        <div className="absolute inset-0 transition-opacity duration-500 ease-in-out"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
-                      </div>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
+          <div className="w-full md:px-24 px-7 md:text-center items-center align-center justify-center space-y-12" id="attendSection">
+            <div className={`flex flex-col space-y-2 z-10`}>
+              <h1 className={`md:text-[68px] text-center text-[56px] w-full leading-[100%] ${plus_jakarta_sans_bold.className} pt-12`}>attend</h1>
             </div>
-        </div>
+            <div className={`grid grid-cols-1 mt-[75px] border border-dashed border-[#e0e0e0]`}>
+              {campuses.map((campus, index) => (
+                <Link href="/" target="_blank" rel="noopener noreferrer" key={index}>
+                <div className="flex flex-col">
+                  <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
+                    <p className={`text-[24px] leading-[150%] px-6 py-6 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name.toLowerCase()}</p>
+                    <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
+                      <div className={`${plus_jakarta_sans_semibold.className} text-2xl font-bold flex items-center w-full h-full`}>
+                        →
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              ))}
+              <Link href="/" target="_blank" rel="noopener noreferrer">
+                <div className="flex flex-col">
+                  <div className="flex flex-row items-stretch justify-between border-b border-dashed text-start space-x-4 border-[#e0e0e0] hover:bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] transition duration-500">
+                    <p className={`text-[24px] leading-[150%] px-6 py-6 text-center w-full ${plus_jakarta_sans_semibold_italic.className}`}>my campus is not listed here...</p>
+                    {/* <div className="flex items-stretch border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-6">
+                    </div> */}
+                  </div>
+                </div>
+              </Link>
+            </div>
+            {/* <div className={`grid grid-cols-1 md:grid-cols-4 gap-14 mt-[75px] border-[#e0e0e0]`}>
+              {campuses.map((campus, index) => (
+                <div key={index} className="flex flex-col">
+                  <div className="relative border border-[#e0e0e0] border-dashed" style={{ height: '238px' }}>
+                    <Image src={campus.image} layout="fill" objectFit="cover" alt={campus.name} />
+                  </div>
+                  <div className="flex flex-row items-stretch align-start justify-between border border-dashed text-start space-x-4 border-[#e0e0e0]">
+                    <p className={`text-[15px] leading-[150%] px-4 py-5 text-black ${plus_jakarta_sans_semibold.className}`}>{campus.name}</p>
+                    <Link href="/" target="_blank" rel="noopener noreferrer">
+                    <div className="relative flex items-center border-l border-dashed border-[#e0e0e0] text-black hover:text-white transition duration-500 z-10 px-4 h-full">
+                      <div className={`${plus_jakarta_sans_semibold.className} text-xl z-10 hover:text-black font-bold`}>
+                        →
+                      </div>
+                      <div className="absolute inset-0 transition-opacity duration-500 ease-in-out"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#FFCBA2] to-[#D895B7] opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
+                    </div>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div> */}
+          </div>
+          </div>
 
-        <div className="relative flex flex-col w-full">
+          <div className="relative flex flex-col w-full">
             <div className={`absolute inset-0 z-0`}>
               <Image
                   src="/truckSketch.png"
@@ -337,41 +337,41 @@ export default function Home() {
                 />
             </div>
           </div>
-              <div className="w-full flex flex-row align-center items-center md:space-x-8 space-x-2 pt-12">
-                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
-                      <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
-                  </div>
-                  <Link href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" className="relative flex w-full justify-start">
-                    <div
-                      onMouseEnter={() => setHover(true)}
-                      onMouseLeave={() => setHover(false)}
-                      className="relative w-full"
-                    >
-                      <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-0' : 'opacity-100'}`}>
-                        <Image
-                          src="/bringToYourCampus.png"
-                          alt="ship it"
-                          layout="responsive"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-100' : 'opacity-0'}`}>
-                        <Image
-                          src="/bringToYourCampusHover.png"
-                          alt="ship it"
-                          layout="responsive"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                    </div>
-                  </Link>
-                  <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
-                        <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
-                  </div>
-                </div>
+          <div className="w-full flex flex-row align-center items-center md:space-x-8 space-x-2 pt-12">
+            <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
+                <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
             </div>
+            <Link href="https://airtable.com/appIL9IqHDejLtfIJ/pagZTNq7G0LqLUaLL/form" className="relative flex w-full      justify-start">
+              <div
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                className="relative w-full"
+              >
+                <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-0' : 'opacity-100'}`}>
+                  <Image
+                    src="/bringToYourCampus.png"
+                    alt="ship it"
+                    layout="responsive"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-100' : 'opacity-0'}`}>
+                  <Image
+                    src="/bringToYourCampusHover.png"
+                    alt="ship it"
+                    layout="responsive"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              </div>
+            </Link>
+            <div className="flex md:w-[1/3] w-[30%] h-[100%] md:pt-28 pt-10 justify-start">
+                  <Image src="/constructionBarThin.png" alt="ship it" layout="responsive" width={100} height={100} />
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col pt-16 items-center">
           <div className="w-full flex justify-center z-20">
           </div>
